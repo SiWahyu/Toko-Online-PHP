@@ -1,3 +1,9 @@
+<?php 
+
+require_once(__DIR__.'/session.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,6 @@
   <title>Home</title>
 </head>
 <body>
-  <h1>Hii admin </h1>
+  <h1>Hii <?= $_SESSION['username'] ?></h1>
 </body>
 </html>
