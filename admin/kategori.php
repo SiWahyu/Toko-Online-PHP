@@ -22,9 +22,45 @@ $nomor = 1;
 <body>
   <?php require_once(__DIR__."/../layouts/navbar.php")?>
   <div class="container mt-5">
-  <h2>Kategori</h2>
+  <h2>Halaman Kategori</h2>
 
+  <div class="my-3 col-12 col-md-6">
+    <h4>Tambah Kategori</h4>
+    <form action="" method="post">
+      <label class="fs-5">Kategori</label>
+      <input type="text" name="kategori" placeholder="tambah kategori" class="form-control" required>
+      <button class="btn btn-primary mt-2" name="simpan">simpan</button>
+    </form>
+    
+      <?php if(isset($_POST['simpan'])) { ?>
+        <?php 
+        $kategori = htmlspecialchars($_POST['kategori']);
+        $cekQuery = "SELECT nama FROM kategori WHERE nama='$kategori'";
+        $resultCek = mysqli_query($connection,$cekQuery);
+
+        if(!$cekData = mysqli_fetch_array($resultCek)) {
+          $queryTambahKategori = "INSERT INTO kategori (nama) VALUES ('$kategori')";
+          $resultTambahKategori = mysqli_query($connection,$queryTambahKategori);
+          echo"
+          <div class='alert alert-success mt-2' role='alert'>
+          Berhasil menambah kategori
+          </div>
+          ";
+          header('refresh:2');
+        }else {
+          echo "
+          <div class='alert alert-danger mt-2' role='alert'>
+          Kategori sudah ada
+          </div>
+          ";
+          header('refresh:2');
+        }
+        
+        ?>
+        <?php } ?>
+  </div>
   <div class="mt-3">
+    <h4>Kategori Produk</h4>
   <?php   if($jumlahKategori > 0) { ?>
   <table class="table table-bordered">
   <thead>

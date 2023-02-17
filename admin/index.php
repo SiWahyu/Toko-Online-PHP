@@ -23,10 +23,9 @@ $jumlahProduk = mysqli_num_rows($resultProduk);
 </head>
 <body>
   <?php require_once(__DIR__."/../layouts/navbar.php"); ?>
-  <div class="container">
+  <div class="container mt-5">
   <h2>Home</h2>
-  <div class="container mt-5 text-center">
-  <div class="row">
+  <div class="mt-3 row  text-center">
     <div class="col-lg-4">
     <div class="card text-bg-secondary" style="width: 18rem;">
   <h3 class="card-header">Kategori</h3>
