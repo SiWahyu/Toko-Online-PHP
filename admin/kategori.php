@@ -24,7 +24,7 @@ $nomor = 1;
   <div class="container mt-5">
   <h2>Halaman Kategori</h2>
 
-  <div class="my-3 col-12 col-md-6">
+  <div class="my-3 col-12 col-md-6 mt-5">
     <h4>Tambah Kategori</h4>
     <form action="" method="post">
       <label class="fs-5">Kategori</label>
@@ -59,7 +59,7 @@ $nomor = 1;
         ?>
         <?php } ?>
   </div>
-  <div class="mt-3">
+  <div class="mt-5">
     <h4>Kategori Produk</h4>
   <?php   if($jumlahKategori > 0) { ?>
   <table class="table table-bordered">
