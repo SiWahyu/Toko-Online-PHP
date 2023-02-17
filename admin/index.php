@@ -24,7 +24,7 @@ $jumlahProduk = mysqli_num_rows($resultProduk);
 <body>
   <?php require_once(__DIR__."/../layouts/navbar.php"); ?>
   <div class="container">
-  <h1>Hii <?= $_SESSION['username'] ?></h1>
+  <h2>Home</h2>
   <div class="container mt-5 text-center">
   <div class="row">
     <div class="col-lg-4">
