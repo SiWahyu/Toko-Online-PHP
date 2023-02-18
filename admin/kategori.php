@@ -1,6 +1,7 @@
 <?php 
 
 require_once(__DIR__."/../koneksi.php");
+require_once(__DIR__."/session.php");
 
 $query = "SELECT * FROM kategori";
 
@@ -28,7 +29,7 @@ $nomor = 1;
     <h4>Tambah Kategori</h4>
     <form action="" method="post">
       <label class="fs-5">Kategori</label>
-      <input type="text" name="kategori" placeholder="tambah kategori" class="form-control" required>
+      <input type="text" name="kategori" placeholder="tambah kategori" class="form-control" required autocomplete="off">
       <button class="btn btn-primary mt-2" name="simpan">simpan</button>
     </form>
     
@@ -76,7 +77,8 @@ $nomor = 1;
       <th scope="row"><?= $nomor++; ?></th>
       <td><?= $data['nama'] ?></td>
       <td>
-        <a class="btn btn-warning text-white" href="kategori_edit.php?id=<?= $data['id']?>">edit</a>
+        <a class="btn btn-warning" href="kategori_edit.php?id=<?= $data['id']?>">edit</a>
+        <a class="btn btn-danger text-white" onclick="return confirm('Hapus kategori <?= $data['nama'] ?> ?')" href="kategori_delete.php?id=<?= $data['id']?>">delete</a>
       </td>
     </tr>
     <?php }?>

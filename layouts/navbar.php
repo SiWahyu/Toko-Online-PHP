@@ -22,10 +22,10 @@
           <a class="nav-link active" aria-current="page" href="../admin/index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Kategori</a>
+          <a class="nav-link" href="kategori.php">Kategori</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Produk</a>
+          <a class="nav-link" href="produk.php">Produk</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../admin/logout.php">Logout</a>
