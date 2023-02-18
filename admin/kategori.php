@@ -67,13 +67,17 @@ $nomor = 1;
     <tr>
       <th scope="col">Nomor</th>
       <th scope="col">Nama</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    <?php while($rows = mysqli_fetch_array($result)) { ?>
+    <?php while($data = mysqli_fetch_array($result)) { ?>
     <tr>
       <th scope="row"><?= $nomor++; ?></th>
-      <td><?= $rows['nama'] ?></td>
+      <td><?= $data['nama'] ?></td>
+      <td>
+        <a class="btn btn-warning text-white" href="kategori_edit.php?id=<?= $data['id']?>">edit</a>
+      </td>
     </tr>
     <?php }?>
   </tbody>
