@@ -54,7 +54,7 @@ require_once(__DIR__.'/../koneksi.php');
           <script>
           setInterval( () => {
             window.location.href = 'kategori.php';
-         },1300);
+         },1400);
           </script>
           <div class='alert alert-success mt-2' role='alert'>
           Berhasil merubah kategori
