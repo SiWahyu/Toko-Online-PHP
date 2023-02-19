@@ -61,8 +61,8 @@ $nomor = 1;
         <?php } ?>
   </div>
   <div class="mt-5">
-    <h4>Kategori Produk</h4>
   <?php   if($jumlahKategori > 0) { ?>
+  <h4>Kategori Produk</h4>
   <table class="table table-bordered">
   <thead>
     <tr>
