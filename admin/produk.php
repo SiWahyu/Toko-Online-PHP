@@ -117,6 +117,7 @@ require_once(__DIR__.'/../layouts/navbar.php');
                     <th scope="col">Kategori</th>
                     <th scope="col">Harga</th>
                     <th scope="col">Ketersedian Stok</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -126,6 +127,8 @@ require_once(__DIR__.'/../layouts/navbar.php');
                   <td><?= $data['kategori_id'] ?></td>
                   <td><?= $data['harga'] ?></td>
                   <td><?= $data['ketersedian_stok'] ?></td>
+                  <td><a class="btn btn-warning" href="produk_edit.php?<?=$data['id']?>">edit</a></a></td>
+                  <td><a class="btn btn-warning text-white" href="produk_delete.php?<?=$data['id']?>">delete</a></a></td>
                   <?php } ?>
                 </tbody>
               </table>

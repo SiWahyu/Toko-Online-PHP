@@ -14,15 +14,28 @@ require_once(__DIR__.'/session.php');
 
 $id = $_GET['id'];
 
-$query = "DELETE FROM kategori WHERE id='$id'";
+$queryCek = "SELECT * FROM produks WHERE kategori_id='$id'";
+$resultCek = mysqli_query($connection,$queryCek);
 
-$result = mysqli_query($connection,$query);
+$jumlahBaris = mysqli_num_rows($resultCek);
 
-if($result){
+if($jumlahBaris > 0){
+  echo "
+  <div class='container'>
+  <div class='alert alert-warning mt-2' role='alert'>
+  Kategori sudah digunakan oleh produk
+  </div>
+  </div>
+  ";
+} else {
+  
+  $query = "DELETE FROM kategori WHERE id='$id'";
+  $result = mysqli_query($connection,$query);
+
   echo "
   <div class='container'>
   <div class='alert alert-success mt-2' role='alert'>
-  Berhasil merubah kategori
+  Berhasil menghapus kategori
   </div>
   </div>
   <script>
