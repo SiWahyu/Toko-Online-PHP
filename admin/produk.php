@@ -104,7 +104,8 @@ require_once(__DIR__.'/../layouts/navbar.php');
               <button class="btn btn-primary mt-2" name="simpan">simpan</button>
             </form>
         </div>
-            <div class="mt-5">
+    </div>
+    <div class="mt-5">
             <?php if(!$rows > 0) { ?>
               <h4>Data Produk Kosong</h4>
             <?php }else { ?>
@@ -122,13 +123,17 @@ require_once(__DIR__.'/../layouts/navbar.php');
                 </thead>
                 <tbody>
                   <?php while($data = mysqli_fetch_array($result)) { ?>
+                    <tr>
                   <td><?= $nomor++ ?></td>
                   <td><?= $data['nama'] ?></td>
                   <td><?= $data['kategori_id'] ?></td>
                   <td><?= $data['harga'] ?></td>
                   <td><?= $data['ketersedian_stok'] ?></td>
-                  <td><a class="btn btn-warning" href="produk_edit.php?<?=$data['id']?>">edit</a></a></td>
-                  <td><a class="btn btn-warning text-white" href="produk_delete.php?<?=$data['id']?>">delete</a></a></td>
+                  <td>
+                    <a class="btn btn-warning" href="produk_edit.php?id=<?=$data['id']?>">edit</a>
+                    <a class="btn btn-danger text-white" href="produk_delete.php?<?=$data['id']?>">delete</a>
+                  </td>
+                  </tr>
                   <?php } ?>
                 </tbody>
               </table>
